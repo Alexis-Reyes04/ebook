@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ebook/domain/entities/image.dart' show EbookPost;
 
+//Pantalla principal de ebooks
 class EbookHomeScreen extends StatefulWidget {
   const EbookHomeScreen({super.key});
 
@@ -8,92 +9,162 @@ class EbookHomeScreen extends StatefulWidget {
   State<EbookHomeScreen> createState() => _EbookHomeScreenState();
 }
 
+// Estado asociado a la pantalla principal
 class _EbookHomeScreenState extends State<EbookHomeScreen> {
   EbookPost? selectedBook; // Almacena el libro selecionaado
   int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    //lista de libros
     List<EbookPost> ebooks = [
       EbookPost(
-        title: "Cien años de soledad",
-        author: "Gabriel Garcia Marquez",
+        titulo: "Cien años de soledad",
+        autor: "Gabriel Garcia Marquez",
         imageUrl: "assets/Imagen/1.jpg",
-        description: "Clasico de literatura",
+        descripcion: "Clasico de literatura",
       ),
       EbookPost(
-        title: "Don Quijote de la Mancha",
-        author: "Miguel de Cervantes",
+        titulo: "Don Quijote de la Mancha",
+        autor: "Miguel de Cervantes",
         imageUrl: "assets/Imagen/2.jpg",
-        description: "Clasico de la literatura",
+        descripcion: "Clasico de la literatura",
       ),
       EbookPost(
-        title: "Orgullo y Prejuicio",
-        author: "Jane Austen",
+        titulo: "Orgullo y Prejuicio",
+        autor: "Jane Austen",
         imageUrl: "assets/Imagen/3.jpg",
-        description: "Clasico de la literatura",
+        descripcion: "Clasico de la literatura",
       ),
       EbookPost(
-        title: "El señor de los Anillos",
-        author: "J.R.R. Tolkien",
+        titulo: "El señor de los Anillos",
+        autor: "J.R.R. Tolkien",
         imageUrl: "assets/Imagen/4.jpg",
-        description: "Ficcion y fantasia",
+        descripcion: "Ficcion y fantasia",
       ),
       EbookPost(
-        title: "El nombre del Viento",
-        author: "Patrick Rothfuss",
+        titulo: "El nombre del Viento",
+        autor: "Patrick Rothfuss",
         imageUrl: "assets/Imagen/5.jpg",
-        description: "Ficcion y fantasia",
+        descripcion: "Ficcion y fantasia",
       ),
       EbookPost(
-        title: "El arte de la guerra",
-        author: "Sun Tzu",
+        titulo: "El arte de la guerra",
+        autor: "Sun Tzu",
         imageUrl: "assets/Imagen/6.jpg",
-        description: "Negocios y desarrollo personal",
+        descripcion: "Negocios y desarrollo personal",
       ),
       EbookPost(
-        title: "Crimen y castigo",
-        author: "Fiódor Dostoyevski",
+        titulo: "Crimen y castigo",
+        autor: "Fiódor Dostoyevski",
         imageUrl: "assets/Imagen/7.jpg",
-        description: "Clasicos de literatura",
+        descripcion: "Clasicos de literatura",
       ),
       EbookPost(
-        title: "El gen egoista",
-        author: "Richard Dawkins",
+        titulo: "El gen egoista",
+        autor: "Richard Dawkins",
         imageUrl: "assets/Imagen/8.jpg",
-        description: "Ciencia y divulgacion",
+        descripcion: "Ciencia y divulgacion",
       ),
       EbookPost(
-        title: "Diario de Ana Frank",
-        author: "Ana Frank",
+        titulo: "Diario de Ana Frank",
+        autor: "Ana Frank",
         imageUrl: "assets/Imagen/9.jpg",
-        description: "Historia y biografías",
+        descripcion: "Historia y biografías",
       ),
       EbookPost(
-        title: "El codigo de Da Vinci",
-        author: "Dan Brown",
+        titulo: "El codigo de Da Vinci",
+        autor: "Dan Brown",
         imageUrl: "assets/Imagen/10.jpg",
-        description: "Misterio y suspenso",
+        descripcion: "Misterio y suspenso",
       ),
       EbookPost(
-        title: "La chica de tren",
-        author: "Paula Hawkins",
+        titulo: "La chica de tren",
+        autor: "Paula Hawkins",
         imageUrl: "assets/Imagen/11.jpg",
-        description: "Misterio y suspenso",
+        descripcion: "Misterio y suspenso",
       ),
       EbookPost(
-        title: "Bajo la misma estrella",
-        author: "John Green",
+        titulo: "Bajo la misma estrella",
+        autor: "John Green",
         imageUrl: "assets/Imagen/12.jpg",
-        description: "Romance",
+        descripcion: "Romance",
+      ),
+      EbookPost(
+        titulo: "La cosas que perdimos en el fuego",
+        autor: "Mariana Enriquez",
+        imageUrl: "assets/Imagen/13.jpg",
+        descripcion: "Terro y realismo oscuro",
+      ),
+      EbookPost(
+        titulo: "La odisea",
+        autor: "Homero",
+        imageUrl: "assets/Imagen/14.jpg",
+        descripcion: "Epica",
+      ),
+      EbookPost(
+        titulo: "Romeo y Julieta",
+        autor: "William Shakespeare",
+        imageUrl: "assets/Imagen/15.jpg",
+        descripcion: "Tragedia",
+      ),
+      EbookPost(
+        titulo: "Madame Bovary",
+        autor: "Gustave Flaubert",
+        imageUrl: "assets/Imagen/16.jpg",
+        descripcion: "Realismo",
+      ),
+      EbookPost(
+        titulo: "En busca del tiempo perdido",
+        autor: "Marcel Proust",
+        imageUrl: "assets/Imagen/17.jpg",
+        descripcion: "Modernismo",
+      ),
+      EbookPost(
+        titulo: "Matar a un ruiseñor",
+        autor: "Harper Lee",
+        imageUrl: "assets/Imagen/18.jpg",
+        descripcion: "Ficcion social",
+      ),
+      EbookPost(
+        titulo: "Ulises",
+        autor: "James Joyce",
+        imageUrl: "assets/Imagen/19.jpg",
+        descripcion: "Vanguardismo",
+      ),
+      EbookPost(
+        titulo: "Pedro parramo",
+        autor: "Juan Rulfo",
+        imageUrl: "assets/Imagen/20.jpg",
+        descripcion: "Realismo magico",
+      ),
+      EbookPost(
+        titulo: "El extranjero",
+        autor: "Albert Camus",
+        imageUrl: "assets/Imagen/21.jpg",
+        descripcion: "Existencialismo",
+      ),
+      EbookPost(
+        titulo: "La casa de los espiritus",
+        autor: "Isabel Allende",
+        imageUrl: "assets/Imagen/22.jpg",
+        descripcion: "Realimso magico",
+      ),
+      EbookPost(
+        titulo: "Los hermanos Karamazov",
+        autor: "Fiódor Dostoyevski ",
+        imageUrl: "assets/Imagen/23.jpg",
+        descripcion: "Psicológica / Filosófica",
       ),
     ];
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('E-Book App'),
+        // Icono de busqueda sin funcionalidad
         actions: [IconButton(icon: const Icon(Icons.search), onPressed: () {})],
       ),
+      //Cuerpo desplazamiento vertical
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -101,32 +172,36 @@ class _EbookHomeScreenState extends State<EbookHomeScreen> {
           children: [
             _buildSearchBar(),
             const SizedBox(height: 16),
+            //Seccion de libros continue
             _buildSectionTitle('Continue..'),
-            _buildHorizontalBookList(ebooks.sublist(0, 4)),
-
+            _buildHorizontalBookList(ebooks.sublist(0, 8)),
             const SizedBox(height: 16),
 
+            //Seccion de libros from library
             _buildSectionTitle('From Library'),
-            _buildHorizontalBookList(ebooks.sublist(4, 8)),
+            _buildHorizontalBookList(ebooks.sublist(8, 15)),
             const SizedBox(height: 16),
 
+            //Seccion de libros recommendations
             _buildSectionTitle('Recommendations'),
-            _buildHorizontalBookList(ebooks.sublist(8)),
+            _buildHorizontalBookList(ebooks.sublist(15)),
 
             if (selectedBook != null) _buildSelectedBookInfo(selectedBook!),
           ],
         ),
       ),
+      //Barra para navegacion inferior
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex, // Índice  seleccionado
         onTap: (index) {
           setState(() {
-            _currentIndex = index;
+            _currentIndex = index; //Actualiza el indice seleccionado
           });
         },
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
         items: const [
+          //Botones de la parte inferior horizontal
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.library_books), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.public), label: ''),
@@ -136,6 +211,7 @@ class _EbookHomeScreenState extends State<EbookHomeScreen> {
     );
   }
 
+  //Metodo para realizar la busqueda
   Widget _buildSearchBar() {
     return TextField(
       decoration: InputDecoration(
@@ -151,6 +227,7 @@ class _EbookHomeScreenState extends State<EbookHomeScreen> {
     );
   }
 
+  //Metodo para realizar el titulo de una seccion
   Widget _buildSectionTitle(String title) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -161,6 +238,7 @@ class _EbookHomeScreenState extends State<EbookHomeScreen> {
     );
   }
 
+  //Metodo para la creacion de lista de libros horizontal
   Widget _buildHorizontalBookList(List<EbookPost> ebooks) {
     return SizedBox(
       height: 150,
@@ -206,6 +284,7 @@ class _EbookHomeScreenState extends State<EbookHomeScreen> {
     );
   }
 
+  //Muestra la informacion del libro selecionado
   Widget _buildSelectedBookInfo(EbookPost ebook) {
     return Container(
       padding: const EdgeInsets.all(12),
@@ -227,7 +306,7 @@ class _EbookHomeScreenState extends State<EbookHomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  ebook.title,
+                  ebook.titulo,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -238,7 +317,7 @@ class _EbookHomeScreenState extends State<EbookHomeScreen> {
                     style: const TextStyle(color: Colors.black),
                     children: [
                       TextSpan(
-                        text: ebook.author,
+                        text: ebook.autor,
                         style: const TextStyle(color: Colors.blue),
                       ),
                     ],

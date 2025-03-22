@@ -1,13 +1,13 @@
 class EbookPost {
-  final String title;
-  final String author;
+  final String titulo;
+  final String autor;
   final String imageUrl;
-  final String description;
+  final String descripcion;
 
   EbookPost({
-    required this.title,
-    required this.author,
+    required this.titulo,
+    required this.autor,
     required this.imageUrl,
-    required this.description,
+    required this.descripcion,
   });
 }

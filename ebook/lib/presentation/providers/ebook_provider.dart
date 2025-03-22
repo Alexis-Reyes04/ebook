@@ -10,16 +10,16 @@ class EbookProvider extends ChangeNotifier {
 
     final List<EbookPost> newEbooks = [
       EbookPost(
-        title: "Noches de pasiones",
-        author: "John smith",
+        titulo: "Noches de pasiones",
+        autor: "John smith",
         imageUrl: "images/1.png", // Usa la ruta del asset
-        description: "usar la desccripcion.",
+        descripcion: "usar la desccripcion.",
       ),
       EbookPost(
-        title: "Esta noche",
-        author: "Jane james",
+        titulo: "Esta noche",
+        autor: "Jane james",
         imageUrl: "images/2.png",
-        description: "usar la desccripcion",
+        descripcion: "usar la desccripcion",
       ),
     ];
 
