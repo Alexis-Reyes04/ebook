@@ -1,6 +1,5 @@
-import 'package:ebook/screens/ebook_home_screen.dart.';
 import 'package:flutter/material.dart';
-import 'ebook_home_screen.dart'; // Importa la pantalla principal
+import 'login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'E-Book App',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const EbookHomeScreen(), // Pantalla principal de Ebook
+      home: const LoginScreen(), // Pantalla de login
     );
   }
 }
